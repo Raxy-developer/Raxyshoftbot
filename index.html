@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Sticker & Photo Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                </div>
+            <div class="header-title">
+                <h1>Studio Kreatif</h1>
+            </div>
+            <div class="header-right">
+                <i class="ph ph-camera"></i>
+            </div>
+        </header>
+
+        <main class="app-content">
+            
+            <section id="sticker-maker" class="page active">
+                <h2><i class="ph ph-sticker"></i> Pembuat Stiker WA</h2>
+                <p>Unggah foto Anda untuk dijadikan stiker. (Demo Frontend)</p>
+                
+                <div class="upload-box">
+                    <input type="file" id="sticker-upload" accept="image/*" hidden>
+                    <label for="sticker-upload" class="upload-label">
+                        <i class="ph ph-upload-simple"></i>
+                        <span>Pilih Foto...</span>
+                    </label>
+                </div>
+                
+                <div class="preview-container" id="sticker-preview-container">
+                    <img id="sticker-preview" src="#" alt="Pratinjau Stiker" />
+                </div>
+                
+                <button id="create-sticker-btn" class="btn-primary">
+                    <i class="ph ph-magic-wand"></i> Hapus Background & Buat Stiker
+                </button>
+                <small>Proses ini memerlukan server (backend) untuk berfungsi penuh.</small>
+            </section>
+
+            <section id="photo-generator" class="page">
+                <h2><i class="ph ph-users-three"></i> Generator Foto Kreatif</h2>
+                <p>Tempelkan wajah Anda ke template foto "berdua".</p>
+
+                <div class="template-selector">
+                    <img src="https://via.placeholder.com/150x200.png?text=Template+1" alt="Template 1" class="template-thumb active" data-template="template1.jpg">
+                    <img src="https://via.placeholder.com/150x200.png?text=Template+2" alt="Template 2" class="template-thumb" data-template="template2.jpg">
+                </div>
+
+                <div class="upload-box">
+                    <input type="file" id="user-photo-upload" accept="image/*" hidden>
+                    <label for="user-photo-upload" class="upload-label">
+                        <i class="ph ph-user-circle-plus"></i>
+                        <span>Pilih Fotomu...</span>
+                    </label>
+                </div>
+
+                <button id="generate-photo-btn" class="btn-primary">
+                    <i class="ph ph-sparkle"></i> Gabungkan Foto
+                </button>
+
+                <div class="result-container">
+                    <h3>Hasil:</h3>
+                    <canvas id="result-canvas" width="400" height="500"></canvas>
+                    <a id="download-btn" class="btn-secondary" download="fotoku.png">
+                        <i class="ph ph-download-simple"></i> Unduh Hasil
+                    </a>
+                </div>
+            </section>
+
+            <section id="settings" class="page">
+                <h2><i class="ph ph-gear"></i> Pengaturan</h2>
+                <ul class="settings-list">
+                    <li>Akun</li>
+                    <li>Privasi</li>
+                    <li>Notifikasi</li>
+                    <li>Bantuan</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer class="tab-bar">
+            <div class="tab-item" data-page="sticker-maker">
+                <i class="ph ph-sticker"></i>
+                <span>Stiker</span>
+            </div>
+            <div class="tab-item active" data-page="photo-generator">
+                <i class="ph ph-users-three"></i>
+                <span>Generator</span>
+            </div>
+            <div class="tab-item" data-page="settings">
+                <i class="ph ph-gear"></i>
+                <span>Pengaturan</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                  </html>
+                  
